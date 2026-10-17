@@ -1,0 +1,82 @@
+{
+  "$schema": "https://sensifai.com/schemas/marketplace/application-submission-v1.json",
+  "application": {
+    "name": "QueueSense",
+    "slug": "queuesense",
+    "category": "retail-and-operations",
+    "subcategories": [
+      "Retail Operations & Store Management",
+      "Queue Management & Footfall Analytics",
+      "Cashier Lane Optimization",
+      "Customer Experience Intelligence"
+    ],
+    "tagline": "Real-Time AI Retail Queue & Footfall Intelligence in 3 Seconds",
+    "short_description": "Real-time AI queue detection, wait-time prediction, cashier lane optimization, and footfall analytics from store cameras, audio reports, and retail feeds.",
+    "long_description": "### Overview\nQueueSense is an AI-powered retail operations and footfall analytics platform designed to eliminate checkout bottlenecks, reduce queue wait times, and optimize register staffing in physical commerce environments. Engineered for supermarkets, department stores, quick-service restaurants, transit hubs, and retail franchises, QueueSense transforms camera captures, video feeds, and floor observation audio notes into actionable cashier deployment recommendations and wait-time metrics in under 3 seconds.\n\n### The Problem\nRetail industry studies demonstrate that when customer checkout wait times exceed 5 minutes, shopping cart abandonment jumps by up to 40%. Store managers and floor leads rarely have real-time visibility into checkout lane congestion until queues have already spilled into shopping aisles, and manual queue counting carries an error rate exceeding 30%. Delayed cashier deployment directly drives lost revenue, negative customer satisfaction, and high operational churn.\n\n### The Solution\nQueueSense provides instant, automated queue telemetry powered by Sensifai Vision Core via the unified LiteLLM AI Gateway. By analyzing retail camera feeds, video clips, or floor observation voice reports, QueueSense delivers:\n- Precise Headcount & Density Detection: Real-time count of customers waiting across individual lanes with stanchion spillover monitoring.\n- Predictive Wait Time Calculations: Exact minimum, average, and maximum wait time estimates modeled against transaction speeds.\n- Dynamic Lane & Staffing Allocation: Concrete, actionable guidance recommending exactly when to open additional registers or deploy self-checkout floor assistants.\n- Footfall & Equilibrium Telemetry: Measurement of customer arrival pacing versus checkout service rates to identify bottleneck buildup early.\n- Operational Efficiency Scoring: Objective 0–100 store efficiency score giving managers an immediate snapshot of floor throughput health.\n- Non-Diagnostic Operational Guard: Built-in operational disclaimer ensuring adherence to privacy guidelines with zero biometric identification retention.\n\n### Key Capabilities\n- Multi-Modal Input: Ingests JPG, PNG, WEBP, MP3, WAV, and WEBM formats up to 10MB (REQ-001).\n- Instant Benchmark Presets: Preloaded retail scenarios (Supermarket Evening Peak, Artisan Coffee Rush, Luxury Boutique, Airport Transit Hub) for instant zero-config testing.\n- Native Gatekeeper Metering: Transparent pay-as-you-go micro-billing at €0.05 per analysis with real-time Gatekeeper wallet reconciliation.\n- 24-Hour Ephemeral Privacy Purge (REQ-005): Zero persistent facial recognition or customer biometric storage with automated 24-hour media cleanup.\n- Enterprise REST API: Dedicated endpoints `/v1/queuesense/analyze`, `/v1/queuesense/analyze-url`, `/v1/queuesense/batch`, and `/v1/queuesense/feedback` for digital signage, security NVRs, and retail ERP platforms.\n\n### Who It's For\n- Store Managers & Floor Operations Leads: Real-time alerts to open secondary registers before line abandonment spikes.\n- Quick-Service Food & Beverage Chains: Managing morning rush bottlenecks and pacing barista/kitchen line clearance.\n- Transit Hub & Event Venues: Managing passenger flow, security gate throughput, and ticketing stanchions.\n- Retail Enterprise Systems Integrators: Connecting existing CCTV cameras to smart POS triggers via REST API.\n\n### How It Works\n1. Ingestion: Capture a photo of the checkout area, upload CCTV frames, or record verbal floor observations.\n2. Neural Queue Vision: Sensifai Vision Core analyzes customer cluster density, active counter status, and line length.\n3. Pacing & Equilibrium Calculation: Correlates arrival rate with cashier throughput to compute exact wait time and abandonment risk.\n4. Actionable Operations Directive: Outputs concrete register deployment directives and queue health scores in under 3 seconds.",
+    "branding": {
+      "display_name": "QueueSense",
+      "primary_color": "#EA580C",
+      "logo_url": "https://queuesense.sensifai.com/logo.png",
+      "covers_url": [
+        "https://queuesense.sensifai.com/images/hero.jpg"
+      ]
+    },
+    "key_features": [
+      "Real-time Multi-camera Queue Stanchion & Headcount Detection",
+      "Continuous Wait-Time Prediction & SLA Threshold Alerts",
+      "Dynamic Cashier & Self-Checkout Register Lane Allocation",
+      "Footfall Pacing & 5-Minute Cart Abandonment Risk Analytics",
+      "Objective 0-100% Operational Efficiency & Queue Health Scoring",
+      "Hands-Free Voice Field Observation Transcription & Ingestion",
+      "Prepaid Gatekeeper Usage Metering at €0.05 / Request",
+      "Automated 24-Hour Ephemeral Media Purge & Zero Biometrics Retention"
+    ],
+    "tags": [
+      "Retail Operations",
+      "Queue Management",
+      "Footfall Analytics",
+      "Customer Experience",
+      "Store Optimization",
+      "Cashier Management",
+      "Computer Vision",
+      "Smart Retail"
+    ],
+    "usecases": [
+      "Supermarket and grocery floor managers predicting checkout congestion and opening additional register lanes before customer wait times exceed 5 minutes",
+      "Quick-service restaurant and coffee shop operators pacing drink preparation and deploying mobile line-busting order takers during morning surges",
+      "Transportation hub and airport gate leads managing boarding security lines, dispatching marshals, and monitoring passenger clearance pacing",
+      "Retail enterprise developers embedding real-time queue intelligence and cashier alerts into POS and ERP platforms via REST API"
+    ],
+    "vendors": [
+      "sensifai"
+    ],
+    "endpoints": {
+      "dashboard_url": "https://queuesense.sensifai.com",
+      "documentation_url": "https://queuesense.sensifai.com#how-it-works",
+      "webhook_url": "https://queuesense.sensifai.com/api/webhooks/sensifai",
+      "api_urls": [
+        {
+          "api_access": "restful",
+          "url": "https://queuesense.sensifai.com/v1/queuesense/analyze"
+        },
+        {
+          "api_access": "restful",
+          "url": "https://queuesense.sensifai.com/api/billable-action"
+        }
+      ],
+      "redirect_uris": [
+        "https://queuesense.sensifai.com/callback",
+        "http://localhost:3000/callback"
+      ],
+      "post_logout_redirect_uris": [
+        "https://queuesense.sensifai.com",
+        "http://localhost:3000"
+      ],
+      "cors_allowed_origins": [
+        "https://queuesense.sensifai.com",
+        "https://sensifai.com",
+        "http://localhost:3000"
+      ]
+    }
+  }
+}

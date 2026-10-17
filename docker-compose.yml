@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  queuesense:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: queuesense-app
+    restart: always
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL:-https://queuesense.sensifai.com}
+      - PUBLIC_URL=${PUBLIC_URL:-https://queuesense.sensifai.com}
+      - LOGTO_ENDPOINT=${LOGTO_ENDPOINT:-https://auth.sensifai.com}
+      - LOGTO_CLIENT_ID=${LOGTO_CLIENT_ID}
+      - LOGTO_CLIENT_SECRET=${LOGTO_CLIENT_SECRET}
+      - LOGTO_SCOPES=${LOGTO_SCOPES:-openid profile email}
+      - SENSIFAI_GATEKEEPER_URL=${SENSIFAI_GATEKEEPER_URL:-https://gatekeeper.sensifai.com}
+      - SENSIFAI_API_KEY=${SENSIFAI_API_KEY}
+      - SENSIFAI_WEBHOOK_SECRET=${SENSIFAI_WEBHOOK_SECRET}
+      - SENSIFAI_PRICE_ID=${SENSIFAI_PRICE_ID}
+      - AI_GATEWAY_URL=${AI_GATEWAY_URL:-https://llm.sensifai.com}
+      - AI_GATEWAY_KEY=${AI_GATEWAY_KEY}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f -s http://127.0.0.1:3000/api/health || node -e \"fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
